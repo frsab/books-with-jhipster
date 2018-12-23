@@ -1,0 +1,16 @@
+version: '2'
+services:
+    books_with_jhipster-mongodb:
+        image: mongo:4.0.2
+        ports:
+            - "27017:27017"
+        command: mongos --configdb books_with_jhipster-mongodb-config
+    books_with_jhipster-mongodb-node:
+        build:
+            context: .
+            dockerfile: mongodb/MongoDB.Dockerfile
+        command: mongod --replSet rs1 --noprealloc --smallfiles
+    books_with_jhipster-mongodb-config:
+        image: mongo:4.0.2
+        container_name: books_with_jhipster-mongodb-config
+        command: mongod --noprealloc --smallfiles --configsvr --dbpath /data/db

@@ -1,0 +1,33 @@
+{
+    "generator-jhipster": {
+        "promptValues": {
+            "packageName": "sf.booksdata"
+        },
+        "jhipsterVersion": "5.7.2",
+        "applicationType": "monolith",
+        "baseName": "books_with_jhipster",
+        "packageName": "sf.booksdata",
+        "packageFolder": "sf/booksdata",
+        "serverPort": "8080",
+        "authenticationType": "jwt",
+        "cacheProvider": "no",
+        "enableHibernateCache": false,
+        "websocket": false,
+        "databaseType": "mongodb",
+        "devDatabaseType": "mongodb",
+        "prodDatabaseType": "mongodb",
+        "searchEngine": false,
+        "messageBroker": false,
+        "serviceDiscoveryType": false,
+        "buildTool": "maven",
+        "enableSwaggerCodegen": false,
+        "jwtSecretKey": "MTJkM2IxZjgxNThmOTA0ODY4MzBhM2Y0Njc4OTA2ZDY4MDYzMTM1YzYyMGM1NjNmYTM3MTllYjBiYjdhMzM1MzlmZDY0ZjhmNjNhOWJiMTI4OTQyY2NiMDM3MjM1N2E3Nzk1MWIxOGVjNWZlNWM0NWY5OWE5YTQ3NmZiZGIwNjk=",
+        "clientFramework": "angularX",
+        "useSass": true,
+        "clientPackageManager": "npm",
+        "testFrameworks": [],
+        "jhiPrefix": "jhi",
+        "otherModules": [],
+        "enableTranslation": false
+    }
+}
