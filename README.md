@@ -1,4 +1,4 @@
-# books_with_jhipster
+# book_data
 
 This application was generated using JHipster 5.7.2, you can find documentation and help at [https://www.jhipster.tech/documentation-archive/v5.7.2](https://www.jhipster.tech/documentation-archive/v5.7.2).
 
@@ -87,9 +87,23 @@ will generate few files:
     create src/main/webapp/app/my-component/my-component.component.ts
     update src/main/webapp/app/app.module.ts
 
+### Doing API-First development using openapi-generator
+
+[OpenAPI-Generator]() is configured for this application. You can generate API code from the `src/main/resources/swagger/api.yml` definition file by running:
+
+```bash
+./mvnw generate-sources
+```
+
+Then implements the generated delegate classes with `@Service` classes.
+
+To edit the `api.yml` definition file, you can use a tool such as [Swagger-Editor](). Start a local instance of the swagger-editor using docker by running: `docker-compose -f src/main/docker/swagger-editor.yml up -d`. The editor will then be reachable at [http://localhost:7742](http://localhost:7742).
+
+Refer to [Doing API-First development][] for more details.
+
 ## Building for production
 
-To optimize the books_with_jhipster application for production, run:
+To optimize the book_data application for production, run:
 
     ./mvnw -Pprod clean package
 
@@ -136,13 +150,13 @@ For more information, refer to the [Code quality page][].
 
 You can use Docker to improve your JHipster development experience. A number of docker-compose configuration are available in the [src/main/docker](src/main/docker) folder to launch required third party services.
 
-For example, to start a mongodb database in a docker container, run:
+For example, to start a mariadb database in a docker container, run:
 
-    docker-compose -f src/main/docker/mongodb.yml up -d
+    docker-compose -f src/main/docker/mariadb.yml up -d
 
 To stop it and remove the container, run:
 
-    docker-compose -f src/main/docker/mongodb.yml down
+    docker-compose -f src/main/docker/mariadb.yml down
 
 You can also fully dockerize your application and all the services that it depends on.
 To achieve this, first build a docker image of your app by running:
@@ -162,6 +176,7 @@ To configure CI for your project, run the ci-cd sub-generator (`jhipster ci-cd`)
 [jhipster homepage and latest documentation]: https://www.jhipster.tech
 [jhipster 5.7.2 archive]: https://www.jhipster.tech/documentation-archive/v5.7.2
 [using jhipster in development]: https://www.jhipster.tech/documentation-archive/v5.7.2/development/
+[service discovery and configuration with the jhipster-registry]: https://www.jhipster.tech/documentation-archive/v5.7.2/microservices-architecture/#jhipster-registry
 [using docker and docker-compose]: https://www.jhipster.tech/documentation-archive/v5.7.2/docker-compose
 [using jhipster in production]: https://www.jhipster.tech/documentation-archive/v5.7.2/production/
 [running tests page]: https://www.jhipster.tech/documentation-archive/v5.7.2/running-tests/
@@ -177,3 +192,6 @@ To configure CI for your project, run the ci-cd sub-generator (`jhipster ci-cd`)
 [protractor]: https://angular.github.io/protractor/
 [leaflet]: http://leafletjs.com/
 [definitelytyped]: http://definitelytyped.org/
+[openapi-generator]: https://openapi-generator.tech
+[swagger-editor]: http://editor.swagger.io
+[doing api-first development]: https://www.jhipster.tech/documentation-archive/v5.7.2/doing-api-first-development/

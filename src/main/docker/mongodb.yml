@@ -1,8 +1,0 @@
-version: '2'
-services:
-    books_with_jhipster-mongodb:
-        image: mongo:4.0.2
-        ports:
-            - "27017:27017"
-        # volumes:
-        #     - ~/volumes/jhipster/books_with_jhipster/mongodb/:/data/db/

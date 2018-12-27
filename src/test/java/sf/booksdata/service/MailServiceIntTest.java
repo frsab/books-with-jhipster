@@ -1,7 +1,7 @@
 package sf.booksdata.service;
 import sf.booksdata.config.Constants;
 
-import sf.booksdata.BooksWithJhipsterApp;
+import sf.booksdata.BookDataApp;
 import sf.booksdata.domain.User;
 import io.github.jhipster.config.JHipsterProperties;
 import org.junit.Before;
@@ -30,7 +30,7 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = BooksWithJhipsterApp.class)
+@SpringBootTest(classes = BookDataApp.class)
 public class MailServiceIntTest {
 
     @Autowired

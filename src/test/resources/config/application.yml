@@ -13,15 +13,55 @@
 # http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
 # ===================================================================
 
+eureka:
+    client:
+        enabled: false
+    instance:
+        appname: book_data
+        instanceId: book_data:${spring.application.instance-id:${random.value}}
 
 spring:
     application:
-        name: books_with_jhipster
-    data:
-        mongodb:
-            host: localhost
-            port: 0
-            database: books_with_jhipster
+        name: book_data
+    cache:
+        type: simple
+    cloud:
+        stream:
+            kafka:
+                binder:
+                    brokers: localhost
+                    zk-nodes: localhost
+            bindings:
+                output:
+                    destination: topic-jhipster
+    datasource:
+        type: com.zaxxer.hikari.HikariDataSource
+        url: jdbc:h2:mem:book_data;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+        name:
+        username:
+        password:
+        hikari:
+            auto-commit: false
+    jpa:
+        database-platform: io.github.jhipster.domain.util.FixedH2Dialect
+        database: H2
+        open-in-view: false
+        show-sql: false
+        hibernate:
+            ddl-auto: none
+            naming:
+                physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
+                implicit-strategy: org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy
+        properties:
+            hibernate.id.new_generator_mappings: true
+            hibernate.connection.provider_disables_autocommit: true
+            hibernate.cache.use_second_level_cache: false
+            hibernate.cache.use_query_cache: false
+            hibernate.generate_statistics: true
+            hibernate.hbm2ddl.auto: validate
+            hibernate.jdbc.time_zone: UTC
+    liquibase:
+        contexts: test
     mail:
         host: localhost
     messages:
@@ -62,7 +102,7 @@ jhipster:
         authentication:
             jwt:
                 # This token must be encoded using Base64 (you can type `echo 'secret-key'|base64` on your command line)
-                base64-secret: MTJkM2IxZjgxNThmOTA0ODY4MzBhM2Y0Njc4OTA2ZDY4MDYzMTM1YzYyMGM1NjNmYTM3MTllYjBiYjdhMzM1MzlmZDY0ZjhmNjNhOWJiMTI4OTQyY2NiMDM3MjM1N2E3Nzk1MWIxOGVjNWZlNWM0NWY5OWE5YTQ3NmZiZGIwNjk=
+                base64-secret: MjBkNWMyZWEyYjdjYjdkMzZkOTVjNWRlYmRjNWZkYjE3MzBhMGMyZjNhOWNlYjM3N2YyNDAzYjI5MGJmNWViN2NiMWFjNmE4ZGZmZGMzYTkwNzYwMzM4MmIxNjUzMzhmMjkzMmRmYzE4ZWE2ZTdiYmMwNWQxNjcwMjEzYWMwNTY=
                 # Token is valid 24 hours
                 token-validity-in-seconds: 86400
     metrics: # DropWizard Metrics configuration, used by MetricsConfiguration

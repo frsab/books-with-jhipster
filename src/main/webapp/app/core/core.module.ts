@@ -2,8 +2,9 @@ import { NgModule, LOCALE_ID } from '@angular/core';
 import { DatePipe, registerLocaleData } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { Title } from '@angular/platform-browser';
-import locale from '@angular/common/locales/en';
+import locale from '@angular/common/locales/fr';
 
+import { FindLanguageFromKeyPipe } from 'app/shared';
 @NgModule({
     imports: [HttpClientModule],
     exports: [],
@@ -12,12 +13,13 @@ import locale from '@angular/common/locales/en';
         Title,
         {
             provide: LOCALE_ID,
-            useValue: 'en'
+            useValue: 'fr'
         },
+        FindLanguageFromKeyPipe,
         DatePipe
     ]
 })
-export class BooksWithJhipsterCoreModule {
+export class BookDataCoreModule {
     constructor() {
         registerLocaleData(locale);
     }

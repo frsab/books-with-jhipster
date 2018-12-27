@@ -3,14 +3,14 @@
     "version": 1,
     "newProjectRoot": "projects",
     "projects": {
-        "books-with-jhipster": {
+        "book-data": {
             "root": "",
             "sourceRoot": "src/main/webapp",
             "projectType": "application",
             "architect": {}
         }
     },
-    "defaultProject": "books-with-jhipster",
+    "defaultProject": "book-data",
     "cli": {
         "packageManager": "npm"
     },

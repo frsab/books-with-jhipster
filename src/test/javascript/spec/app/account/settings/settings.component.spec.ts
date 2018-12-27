@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed, async } from '@angular/core/testing';
 import { Observable, throwError } from 'rxjs';
 
-import { BooksWithJhipsterTestModule } from '../../../test.module';
+import { BookDataTestModule } from '../../../test.module';
 import { AccountService } from 'app/core';
 import { SettingsComponent } from 'app/account/settings/settings.component';
 
@@ -13,7 +13,7 @@ describe('Component Tests', () => {
 
         beforeEach(async(() => {
             TestBed.configureTestingModule({
-                imports: [BooksWithJhipsterTestModule],
+                imports: [BookDataTestModule],
                 declarations: [SettingsComponent],
                 providers: []
             })
@@ -35,7 +35,7 @@ describe('Component Tests', () => {
 
                 activated: true,
                 email: 'john.doe@mail.com',
-                langKey: 'en',
+                langKey: 'fr',
                 login: 'john'
             };
             mockAuth.setIdentityResponse(accountValues);

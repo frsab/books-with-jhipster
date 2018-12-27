@@ -1,6 +1,6 @@
 version: '2'
 services:
-    books_with_jhipster-sonar:
+    book_data-sonar:
         image: sonarqube:7.1
         ports:
             - 9001:9000

@@ -3,9 +3,10 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { NgModule, ElementRef, Renderer } from '@angular/core';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { JhiDataUtils, JhiDateUtils, JhiEventManager, JhiAlertService, JhiParseLinks } from 'ng-jhipster';
+import { JhiLanguageService, JhiDataUtils, JhiDateUtils, JhiEventManager, JhiAlertService, JhiParseLinks } from 'ng-jhipster';
 
-import { AccountService, LoginModalService } from 'app/core';
+import { MockLanguageService, MockLanguageHelper } from './helpers/mock-language.service';
+import { JhiLanguageHelper, AccountService, LoginModalService } from 'app/core';
 import { MockAccountService } from './helpers/mock-account.service';
 import { MockActivatedRoute, MockRouter } from './helpers/mock-route.service';
 import { MockActiveModal } from './helpers/mock-active-modal.service';
@@ -18,6 +19,14 @@ import { MockEventManager } from './helpers/mock-event-manager.service';
         JhiDateUtils,
         JhiParseLinks,
         {
+            provide: JhiLanguageService,
+            useClass: MockLanguageService
+        },
+        {
+            provide: JhiLanguageHelper,
+            useClass: MockLanguageHelper
+        },
+        {
             provide: JhiEventManager,
             useClass: MockEventManager
         },
@@ -27,7 +36,7 @@ import { MockEventManager } from './helpers/mock-event-manager.service';
         },
         {
             provide: ActivatedRoute,
-            useValue: new MockActivatedRoute({ id: '123' })
+            useValue: new MockActivatedRoute({ id: 123 })
         },
         {
             provide: Router,
@@ -60,4 +69,4 @@ import { MockEventManager } from './helpers/mock-event-manager.service';
     ],
     imports: [HttpClientTestingModule]
 })
-export class BooksWithJhipsterTestModule {}
+export class BookDataTestModule {}

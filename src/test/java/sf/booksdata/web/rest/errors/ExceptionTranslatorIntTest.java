@@ -1,6 +1,6 @@
 package sf.booksdata.web.rest.errors;
 
-import sf.booksdata.BooksWithJhipsterApp;
+import sf.booksdata.BookDataApp;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -24,7 +24,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  * @see ExceptionTranslator
  */
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = BooksWithJhipsterApp.class)
+@SpringBootTest(classes = BookDataApp.class)
 public class ExceptionTranslatorIntTest {
 
     @Autowired

@@ -1,7 +1,7 @@
 package sf.booksdata.service.mapper;
 
 
-import sf.booksdata.BooksWithJhipsterApp;
+import sf.booksdata.BookDataApp;
 import sf.booksdata.domain.User;
 import sf.booksdata.service.dto.UserDTO;
 import org.apache.commons.lang3.RandomStringUtils;
@@ -25,7 +25,7 @@ import static org.assertj.core.api.Assertions.assertThat;
  * @see UserMapper
  */
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = BooksWithJhipsterApp.class)
+@SpringBootTest(classes = BookDataApp.class)
 public class UserMapperTest {
 
     private static final String DEFAULT_LOGIN = "johndoe";
@@ -36,7 +36,7 @@ public class UserMapperTest {
     private User user;
     private UserDTO userDto;
 
-    private static final String DEFAULT_ID = "id1";
+    private static final Long DEFAULT_ID = 1L;
 
     @Before
     public void init() {

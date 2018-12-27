@@ -1,33 +1,36 @@
 {
     "generator-jhipster": {
         "promptValues": {
-            "packageName": "sf.booksdata"
+            "packageName": "sf.booksdata",
+            "nativeLanguage": "fr"
         },
         "jhipsterVersion": "5.7.2",
         "applicationType": "monolith",
-        "baseName": "books_with_jhipster",
+        "baseName": "book_data",
         "packageName": "sf.booksdata",
         "packageFolder": "sf/booksdata",
         "serverPort": "8080",
         "authenticationType": "jwt",
-        "cacheProvider": "no",
-        "enableHibernateCache": false,
+        "cacheProvider": "ehcache",
+        "enableHibernateCache": true,
         "websocket": false,
-        "databaseType": "mongodb",
-        "devDatabaseType": "mongodb",
-        "prodDatabaseType": "mongodb",
+        "databaseType": "sql",
+        "devDatabaseType": "mariadb",
+        "prodDatabaseType": "mariadb",
         "searchEngine": false,
-        "messageBroker": false,
-        "serviceDiscoveryType": false,
+        "messageBroker": "kafka",
+        "serviceDiscoveryType": "eureka",
         "buildTool": "maven",
-        "enableSwaggerCodegen": false,
-        "jwtSecretKey": "MTJkM2IxZjgxNThmOTA0ODY4MzBhM2Y0Njc4OTA2ZDY4MDYzMTM1YzYyMGM1NjNmYTM3MTllYjBiYjdhMzM1MzlmZDY0ZjhmNjNhOWJiMTI4OTQyY2NiMDM3MjM1N2E3Nzk1MWIxOGVjNWZlNWM0NWY5OWE5YTQ3NmZiZGIwNjk=",
+        "enableSwaggerCodegen": true,
+        "jwtSecretKey": "MjBkNWMyZWEyYjdjYjdkMzZkOTVjNWRlYmRjNWZkYjE3MzBhMGMyZjNhOWNlYjM3N2YyNDAzYjI5MGJmNWViN2NiMWFjNmE4ZGZmZGMzYTkwNzYwMzM4MmIxNjUzMzhmMjkzMmRmYzE4ZWE2ZTdiYmMwNWQxNjcwMjEzYWMwNTY=",
         "clientFramework": "angularX",
         "useSass": true,
         "clientPackageManager": "npm",
-        "testFrameworks": [],
+        "testFrameworks": ["cucumber", "protractor"],
         "jhiPrefix": "jhi",
         "otherModules": [],
-        "enableTranslation": false
+        "enableTranslation": true,
+        "nativeLanguage": "fr",
+        "languages": ["fr", "ar-ly", "nl", "en", "it", "es"]
     }
 }

@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed, async, inject, fakeAsync, tick } from '@angu
 import { Observable, of } from 'rxjs';
 import { HttpHeaders, HttpResponse } from '@angular/common/http';
 
-import { BooksWithJhipsterTestModule } from '../../../test.module';
+import { BookDataTestModule } from '../../../test.module';
 import { UserMgmtComponent } from 'app/admin/user-management/user-management.component';
 import { UserService, User } from 'app/core';
 
@@ -14,7 +14,7 @@ describe('Component Tests', () => {
 
         beforeEach(async(() => {
             TestBed.configureTestingModule({
-                imports: [BooksWithJhipsterTestModule],
+                imports: [BookDataTestModule],
                 declarations: [UserMgmtComponent]
             })
                 .overrideTemplate(UserMgmtComponent, '')
@@ -36,7 +36,7 @@ describe('Component Tests', () => {
                     spyOn(service, 'query').and.returnValue(
                         of(
                             new HttpResponse({
-                                body: [new User('123')],
+                                body: [new User(123)],
                                 headers
                             })
                         )
@@ -48,7 +48,7 @@ describe('Component Tests', () => {
 
                     // THEN
                     expect(service.query).toHaveBeenCalled();
-                    expect(comp.users[0]).toEqual(jasmine.objectContaining({ id: '123' }));
+                    expect(comp.users[0]).toEqual(jasmine.objectContaining({ id: 123 }));
                 })
             ));
         });
@@ -59,7 +59,7 @@ describe('Component Tests', () => {
                 fakeAsync(() => {
                     // GIVEN
                     const headers = new HttpHeaders().append('link', 'link;link');
-                    const user = new User('123');
+                    const user = new User(123);
                     spyOn(service, 'query').and.returnValue(
                         of(
                             new HttpResponse({
@@ -77,7 +77,7 @@ describe('Component Tests', () => {
                     // THEN
                     expect(service.update).toHaveBeenCalledWith(user);
                     expect(service.query).toHaveBeenCalled();
-                    expect(comp.users[0]).toEqual(jasmine.objectContaining({ id: '123' }));
+                    expect(comp.users[0]).toEqual(jasmine.objectContaining({ id: 123 }));
                 })
             ));
         });
