@@ -27,10 +27,10 @@ spring:
         type: simple
     cloud:
         stream:
-            kafka:
-                binder:
-                    brokers: localhost
-                    zk-nodes: localhost
+#            kafka:
+#                binder:
+#                    brokers: localhost
+#                    zk-nodes: localhost
             bindings:
                 output:
                     destination: topic-jhipster
