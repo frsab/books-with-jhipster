@@ -1,11 +1,15 @@
 package sf.booksdata.service;
 
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.annotation.Bean;
+import org.springframework.mail.javamail.JavaMailSenderImpl;
 import sf.booksdata.domain.User;
 
 import io.github.jhipster.config.JHipsterProperties;
 
 import java.nio.charset.StandardCharsets;
 import java.util.Locale;
+import java.util.Properties;
 import javax.mail.internet.MimeMessage;
 
 import org.slf4j.Logger;
@@ -48,6 +52,8 @@ public class MailService {
         this.messageSource = messageSource;
         this.templateEngine = templateEngine;
     }
+
+
 
     @Async
     public void sendEmail(String to, String subject, String content, boolean isMultipart, boolean isHtml) {

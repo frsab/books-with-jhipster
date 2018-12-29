@@ -143,3 +143,11 @@ Desktop.ini
 # ESLint
 ######################
 .eslintcache
+
+
+######################
+# Google account password
+######################
+.eslintcache
+src/main/resources/google-account.yml
+
